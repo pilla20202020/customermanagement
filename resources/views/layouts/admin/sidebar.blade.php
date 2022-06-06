@@ -47,6 +47,15 @@
                     </ul>
                 </li>
 
+                <li class=""><a href="javascript: void(0);" class="has-arrow" aria-expanded="false" aria-expanded="false"><i class="fas fa-file-invoice-dollar"></i> Credit</a>
+                    <ul class="sub-menu mm-collapse" aria-expanded="true">
+
+                        {{-- <li><a href="{{route('vacancies.all_candidate_applications')}}" aria-expanded="false"><i class="fas fa-address-card"></i>All Applications</a></li> --}}
+                        <li><a href="{{route('credit.index')}}"><i class="fas fa-hand-point-right"></i> View Credit</a></li>
+                        <li><a href="{{route('credit.create')}}"><i class="fas fa-hand-point-right"></i> Add Credit</a></li>
+                    </ul>
+                </li>
+
             </ul>
         </div>
         <!-- Sidebar -->

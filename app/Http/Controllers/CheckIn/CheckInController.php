@@ -131,6 +131,10 @@ class CheckInController extends Controller
     public function destroy($id)
     {
         //
+        $checkIn = $this->checkIn->delete($id);
+        {
+            return redirect()->route('checkin.index');
+        }
     }
 
     public function getRoomTypePrice(Request $request)

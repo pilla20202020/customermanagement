@@ -43,7 +43,7 @@
                             <th>Name</th>
                             <th>Email</th>
                             <th>Phone</th>
-                            <th>Citizenship No.</th>
+                            <th>Identification No.</th>
                         </tr>
                         </tfoot>
                     </table>
@@ -82,7 +82,7 @@
                     { "data": "name" },
                     { "data": "email" },
                     { "data": "mobile_no" },
-                    { "data": "citizenship" },
+                    { "data": "identification_no" },
                     { "data": "actions", orderable: false, searchable: false },
                 ],
                 order: [ [0, 'desc'] ]

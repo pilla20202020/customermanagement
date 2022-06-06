@@ -62,19 +62,15 @@
                         @endif
 
                         <div class="col-sm-4 form-group">
-                            <label for="name" class="pt-0">Nationality: </label>
-                            <span> {{ ucfirst($customer->nationality) }}</span>
+                            <label for="name" class="pt-0">Identification Type: </label>
+                            <span> {{ ucfirst($customer->identification_type) }}</span>
                         </div>
 
                         <div class="col-sm-4 form-group">
-                            <label for="name" class="pt-0">CitizenShip No: </label>
-                            <span> {{ ucfirst($customer->citizenship) }}</span>
+                            <label for="name" class="pt-0">Identification No: </label>
+                            <span> {{ ucfirst($customer->identification_no) }}</span>
                         </div>
 
-                        <div class="col-sm-4 form-group">
-                            <label for="name" class="pt-0">CitizenShip Issue Date: </label>
-                            <span> {{ ucfirst($customer->citizenship_issue_date) }}</span>
-                        </div>
 
                         <div class="col-sm-4 form-group">
                             <label for="name" class="pt-0">Province: </label>

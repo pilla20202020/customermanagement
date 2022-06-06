@@ -39,9 +39,8 @@ class CustomerRequest extends FormRequest
             'ward_no'=> 'required|integer',
             'village_name'=> 'nullable|string',
             'gender' => 'required|string|max:15',
-            'nationality'=> 'required|string|',
-            'citizenship'=> 'required|string|',
-            'citizenship_issue_district_id'=> 'integer',
+            'identification_type'=> 'required|string|',
+            'identification_no'=> 'required|string|',
             'image' => 'nullable|image|mimes:jpg,jpeg',
             'citizenship_image' => 'nullable|image|mimes:jpg,jpeg',
         ];

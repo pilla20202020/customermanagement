@@ -110,9 +110,7 @@ class CheckInService extends Service
     {
         try{
             $checkIn = $this->checkIn->find($checkInId);
-            $checkIn->is_deleted = "yes";
-            $checkIn->deleted_by = Auth::user()->id;
-            $checkIn->save();
+            return $checkIn = $checkIn->delete();
         } catch(Exception $e) {
             return null;
         }

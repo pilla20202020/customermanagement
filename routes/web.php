@@ -173,4 +173,22 @@ Route::group(['middleware' => 'auth','namespace' => 'App\Http\Controllers'], fun
 
     });
 
+    /*
+    |--------------------------------------------------------------------------
+    | Loan CRUD
+    |--------------------------------------------------------------------------
+    |
+    */
+
+    Route::group(['as' => 'credit.', 'prefix' => 'credit',], function () {
+        Route::get('', 'Credit\CreditController@index')->name('index');
+        Route::get('credit-data', 'Credit\CreditController@getAllData')->name('data');
+        Route::get('create', 'Credit\CreditController@create')->name('create');
+        Route::post('', 'Credit\CreditController@store')->name('store');
+        Route::get('{credit}/show','Credit\CreditController@show')->name('show');
+        Route::get('{credit}/edit', 'Credit\CreditController@edit')->name('edit');
+        Route::put('{credit}', 'Credit\CreditController@update')->name('update');
+        Route::get('/{id}/destroy', 'Credit\CreditController@destroy')->name('destroy');
+    });
+
 });

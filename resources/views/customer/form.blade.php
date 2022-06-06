@@ -178,19 +178,26 @@
                     <div class="row">
                         <div class="col-sm-3">
                             <div class="form-group">
-                                <label for="nationality" class="col-form-label pt-0">Nationality<span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" name="nationality" value="{{ old('nationality', isset($customer->nationality) ? $customer->nationality : '') }}" required>
-                                @error('nationality')
-                                    <span class="text-danger">{{ $errors->first('nationality') }}</span>
+                                <label for="identification_type" class="col-form-label pt-0">Identification Type<span class="text-danger">*</span></label>
+                                <select name="identification_type" id="identification_type" class="form-control">
+                                    <option value="#" disabled selected>Select Identification Type</option>
+                                    <option value="id" {{ old('identification_type') == 'id' ? 'selected' : '' }} @if(isset($customer) && $customer->identification_type == "id" ) selected @endif>ID</option>
+                                    <option value="citizenship" {{ old('identification_type') == 'citizenship' ? 'selected' : '' }} @if(isset($customer) && $customer->identification_type == "citizenship" ) selected @endif>Citizenship</option>
+                                    <option value="license" {{ old('identification_type') == 'license' ? 'selected' : '' }} @if(isset($customer) && $customer->identification_type == "license" ) selected @endif>License</option>
+                                    <option value="passport" {{ old('identification_type') == 'passport' ? 'selected' : '' }} @if(isset($customer) && $customer->identification_type == "passport" ) selected @endif>Passport</option>
+                                    <option value="pan" {{ old('identification_type') == 'pan' ? 'selected' : '' }} @if(isset($customer) && $customer->identification_type == "pan" ) selected @endif>Pan</option>
+                                </select>
+                                @error('identification_type')
+                                    <span class="text-danger">{{ $errors->first('identification_type') }}</span>
                                 @enderror
                             </div>
                         </div>
                         <div class="col-sm-3">
                             <div class="form-group">
-                                <label for="nationality" class="col-form-label pt-0">Citizenship No<span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" name="citizenship" value="{{ old('nationality', isset($customer->citizenship) ? $customer->citizenship : '') }}" required>
-                                @error('citizenship')
-                                    <span class="text-danger">{{ $errors->first('citizenship') }}</span>
+                                <label for="identification_no" class="col-form-label pt-0">Identification No<span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" name="identification_no" value="{{ old('identification_no', isset($customer->identification_no) ? $customer->identification_no : '') }}" required>
+                                @error('identification_no')
+                                    <span class="text-danger">{{ $errors->first('identification_no') }}</span>
                                 @enderror
                             </div>
                         </div>
@@ -203,23 +210,7 @@
                         <!--        @enderror-->
                         <!--    </div>-->
                         <!--</div>-->
-                        <div class="col-sm-3">
-                            <div class="form-group">
-                                <label for="districts" class="col-form-label pt-0">Citizenship Issue District</label>
-                                    <select data-placeholder="Select District"
-                                        class="select2 tail-select form-control district_class" id="district_id"
-                                        name="citizenship_issue_district_id" >
-                                        <option value="" selected disabled>Select Citizenship Issuing District</option>
-                                        @foreach ($districts as $district)
-                                            <option value="{{ $district->id }}" @if(old('citizenship_issue_district_id') == $district->id) selected @endif @if(isset($customer) && ($customer->citizenship_issue_district_id == $district->id)) selected @endif >
-                                                {{ ucfirst($district->district_name) }}</option>
-                                        @endforeach
-                                    </select>
-                                    @error('citizenship_issue_district_id')
-                                        <span class="text-danger">{{ $errors->first('citizenship_issue_district_id') }}</span>
-                                    @enderror
-                            </div>
-                        </div>
+
                     </div>
 
                     <div class="row">

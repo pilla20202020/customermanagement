@@ -63,11 +63,10 @@ class CustomerService extends Service
                     'province_id' => $data['province_id'] ?? null,
                     'district_id' => $data['district_id'] ?? null,
                     'municipality_id' => $data['municipality_id'] ?? null,
-                    'ward_no' => $data['ward_no'],
-                    'village_name' => $data['village_name'],
-                    'nationality' => $data['nationality'],
-                    'citizenship' => $data['citizenship'],
-                    'citizenship_issue_district_id' => $data['citizenship_issue_district_id'],
+                    'ward_no' => $data['ward_no'] ?? null,
+                    'village_name' => $data['village_name'] ?? null,
+                    'identification_type' => $data['identification_type'] ?? null,
+                    'identification_no' => $data['identification_no'] ?? null,
                     'status' => 'Pending',
                     'created_by' => Auth::user()->id
                 ];
@@ -136,11 +135,10 @@ class CustomerService extends Service
                     'province_id' => $data['province_id'] ?? null,
                     'district_id' => $data['district_id'] ?? null,
                     'municipality_id' => $data['municipality_id'] ?? null,
-                    'ward_no' => $data['ward_no'],
-                    'village_name' => $data['village_name'],
-                    'nationality' => $data['nationality'],
-                    'citizenship' => $data['citizenship'],
-                    'citizenship_issue_district_id' => $data['citizenship_issue_district_id'],
+                    'ward_no' => $data['ward_no'] ?? null,
+                    'village_name' => $data['village_name'] ?? null,
+                    'identification_type' => $data['identification_type'] ?? null,
+                    'identification_no' => $data['identification_no'] ?? null,
                 ];
 
                 if (!empty($data['image'])) {
