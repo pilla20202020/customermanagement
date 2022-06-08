@@ -27,7 +27,7 @@
 @endif
 
 @if(!empty($checklist))
-    <button type="button" class="btn btn-primary btn-approve btn-sm" onclick="approvedthis({{$checklist}})" value="1">Add Check Out</button>
+    <button type="button" class="btn btn-primary btn-approve btn-sm mb-1" onclick="approvedthis({{$checklist}})" value="1">Add Check Out</button>
 @endif
 
 @if(!empty($billRoute))
