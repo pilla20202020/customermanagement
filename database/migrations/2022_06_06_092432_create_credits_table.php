@@ -15,13 +15,13 @@ class CreateCreditsTable extends Migration
     {
         Schema::create('credits', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('customer_id');
+            $table->unsignedBigInteger('customer_id')->index()->nullable();
             $table->string('price',255)->nullable();
-            $table->unsignedBigInteger('created_by')->nullable();
-            $table->unsignedBigInteger('updated_by')->nullable();
+            $table->unsignedBigInteger('created_by')->index()->nullable();
+            $table->unsignedBigInteger('updated_by')->index()->nullable();
             $table->foreign('customer_id')->references('id')->on('customers')->cascadeOnDelete()->cascadeOnUpdate();
-            $table->foreign('created_by')->references('id')->on('users')->cascadeOnDelete()->cascadeOnUpdate();
-            $table->foreign('updated_by')->references('id')->on('users')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreign('created_by')->references('id')->on('users');
+            $table->foreign('updated_by')->references('id')->on('users');
             $table->timestamps();
         });
     }

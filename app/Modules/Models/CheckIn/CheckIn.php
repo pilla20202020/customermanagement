@@ -44,6 +44,6 @@ class CheckIn extends Model
 
     public function bills()
     {
-        return $this->hasMany(Bill::class,'checkin_id','id');
+        return $this->hasMany(Bill::class,'checkin_id','id')->orderBy('date');
     }
 }

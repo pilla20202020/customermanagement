@@ -42,7 +42,7 @@ class CheckInService extends Service
                 if($query->checked_out == null) {
                     $checklist = $query->id;
                     $editRoute = route('checkin.edit', $query->id);
-                    $billRoute = null;
+                    $billRoute = route('checkin.generate_bill', $query->id);
                     $invoiceRoute = null;
                     $viewRoute = null;
                     $deleteRoute = route('checkin.delete', $query->id);
@@ -53,7 +53,6 @@ class CheckInService extends Service
                     $invoiceRoute = null;
                     $viewRoute = route('checkin.show', $query->id);
                     $deleteRoute = null;
-
                 }else {
                     $checklist = null;
                     $editRoute = null;

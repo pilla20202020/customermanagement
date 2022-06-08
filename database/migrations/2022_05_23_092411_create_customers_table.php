@@ -35,10 +35,10 @@ class CreateCustomersTable extends Migration
             $table->string('village_name',255)->nullable();
             $table->string('full_address',255)->nullable();
             $table->string('documents',500)->nullable();
-            $table->string('citizenship',500)->nullable();
+            $table->string('identification_type',500)->nullable();
             $table->string('citizenship_issue_date',500)->nullable();
             $table->string('citizenship_issue_district_id',500)->nullable();
-            $table->string('nationality',500)->nullable();
+            $table->string('identification_no',500)->nullable();
             $table->string('citizenship_image',500)->nullable();
             $table->string('image',500)->nullable();
             $table->enum('status',['Pending','Approved','Rejected'])->default('Pending');
